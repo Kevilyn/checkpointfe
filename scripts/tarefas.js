@@ -9,6 +9,17 @@ const listFinishedTasks = document.querySelector(".tarefas-terminadas")
 const listTasks = document.querySelector(".tarefas-pendentes")
 listTasks.innerHTML = ""
 
+/*const logoffButton = document.querySelector("#closeApp")
+logoffButton.addEventListener("click", logoff)
+
+const form = document.querySelector("form")
+form.addEventListener("submit",  handleSubmit)
+
+const valorInput = document.querySelector("#novaTarefa")
+const listFinishedTasks = document.querySelector(".tarefas-terminadas")
+const listTasks = document.querySelector(".tarefas-pendentes")
+listTasks.innerHTML = ""
+*/
 function handleSubmit(evento){
   evento.preventDefault()
   saveTask({description:valorInput.value, completed: false})
@@ -18,6 +29,9 @@ function saveTask(task){
   registerTask(task)
   console.log(task, "task")
 }
+
+
+
 
 function createTask(task){
     const li = document.createElement("li")
@@ -121,25 +135,26 @@ async function deleteTask(id, elemento) {
       .catch((err) => console.error(err.message))
 }
 
-getTask()
-
-function myFunction() {
+function filter() {
   var input, filter, ul, li, a, i, txtValue;
-  input = document.getElementById("myInput");
+  input = document.getElementById("search");
   filter = input.value.toUpperCase();
-  ul = document.getElementById("myUL");
+  ul = document.getElementById("tarefas-pendentes");
   li = ul.getElementsByTagName("li");
   for (i = 0; i < li.length; i++) {
-      a = li[i].getElementsByTagName("a")[0];
-      txtValue = a.textContent || a.innerText;
+    nome = li[i].getElementsByClassName("nome")[0];
+      txtValue = nome.innerHTML;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
           li[i].style.display = "";
       } else {
-        
-li[i].style.display = "none";
+          li[i].style.display = "none";
       }
   }
 }
+
+getTask()
+
+
 
 
 /*

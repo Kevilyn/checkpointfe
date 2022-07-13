@@ -35,7 +35,7 @@
 
     
       <div class="busca">
-        <input type="text" name="search" id="search" placeholder="Buscar" required>
+        <input onkeyup="myFunction()" type="text" name="search" id="search" placeholder="Buscar"/>
         <button type="submit"><i class="fas fa-search"></i></button> </div>
         
       <p>Nome usuário</p>
@@ -60,7 +60,7 @@
   </form>
 
   <ul class="tarefas-pendentes">
-    <div>
+    
     <!-- <div id="skeleton"> -->
       <li class="tarefa">
         <div class="not-done"></div>
@@ -84,14 +84,35 @@
         </div>
       </li>
 
-    </div>
-  </ul>
+  </ul >
 
   <h2 class="titulo-terminadas">Tarefas terminadas</h2>
-  <ul class="tarefas-terminadas">
+  <ul id="tarefas" class="tarefas-terminadas">
   </ul>
 
+  <script>
+  function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("search");
+    filter = input.value.toUpperCase();
+    ul = document.getElementsByClassName("tarefas-pendentes");
+    li = ul.getElementsByClassName("tarefa");
+    for (i = 0; i < li.length; i++) {
+        nome = li[i].getElementsByTagName("nome")[0];
+        txtValue = nome.textContent || nome.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+          
+  li[i].style.display = "none";
+        }
+    }
+  }
+ </script>
+
     <script type="module" src="./scripts/tarefas.js"></script>
+
+
 </body>
 
 </html>
