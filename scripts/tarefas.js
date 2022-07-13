@@ -9,6 +9,7 @@ const listFinishedTasks = document.querySelector(".tarefas-terminadas")
 const listTasks = document.querySelector(".tarefas-pendentes")
 listTasks.innerHTML = ""
 
+
 function handleSubmit(evento){
   evento.preventDefault()
   saveTask({description:valorInput.value, completed: false})
@@ -19,6 +20,20 @@ function saveTask(task){
   console.log(task, "task")
 }
 
+//utilizamos o metodo onload para efetuar a funcao de inserir o nome quando a pagina for carregada.
+window.onload = function () {
+
+  receberUsuario()
+
+  listarTarefas()
+
+  btnBotaoCriar.addEventListener("click", (event) => {
+    event.preventDefault();
+    this.criarTarefa();
+
+  })
+
+};
 function createTask(task){
     const li = document.createElement("li")
     li.classList.add("tarefa")
@@ -147,3 +162,22 @@ registerTask({
   "description": "Aprender Javascript",
   "completed": false
 })*/
+
+function filter() {
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById("search");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("tarefas-pendentes");
+  li = ul.getElementsByTagName("li");
+  for (i = 0; i < li.length; i++) {
+    nome = li[i].getElementsByClassName("nome")[0];
+      txtValue = nome.innerHTML;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+      } else {
+          li[i].style.display = "none";
+      }
+  }
+}
+
+getTask()
