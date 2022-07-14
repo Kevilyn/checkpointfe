@@ -15,6 +15,8 @@
 </head>
 
 <body>
+  <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v14.0&appId=1093824261558061&autoLogAppEvents=1" nonce="kAwKosC1"></script>
 
   <div class="left">
     <img src="./assets/pato.png" alt="">
@@ -60,6 +62,7 @@
       <hr class='divider2'>
     
       <ul class="social-icons">
+        <div class="fb-login-button" data-width="" data-size="medium" data-button-type="login_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="false"></div>
         <li><a href="link" target="_blank"><i class="fa fa-facebook"></i></a></li>  
         <li><a href="link" target="_blank"><i class="fa fa-twitter"></i></a></li>  
         <li><a href="link" target="_blank"><i class="fa fa-google"></i></a></li>  
@@ -72,13 +75,33 @@
     </div>
   </div>
   
-  <!-- ---------------------- lógica aplicada no registro -------------------- -->
+  <!-- ---------------------- lógica aplicada no registro -------------------- --> 
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '1093824261558061',
+        cookie     : true,
+        xfbml      : true,
+        version    : '0.0.1'
+      });
+        
+      FB.AppEvents.logPageView();   
+        
+    };
+
+    (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
   <script type="module" src="/scripts/utils.js"></script>
   <script type="module" src="/scripts/signup.js"></script>
 </body>
 
 
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 
 
 </html>
