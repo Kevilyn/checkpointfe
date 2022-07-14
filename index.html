@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do App</title>
+
+  <!-- ---------------- estilos compartilhados entre login e signup ---------------- -->
+  <link rel="stylesheet" href="styles/acesso.css">
+
+  <!-- ---------------------- lógica aplicada no login ----------------------- -->
+  <script type="module"src="/scripts/utils.js" defer></script>
+  <script type="module"src="/scripts/index.js" defer></script>
+
+  <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'><link rel="stylesheet" href="./style.css">
+
+
+</head>
+
+<body>
+  <div class="left">
+    <h1>Welcome To PaToDo</h1>
+    <img src="./assets/Wavy_Bus-06_Single-03.jpg" alt="">
+  </div>
+
+  <div class="right">
+ 
+    <form data-form-login id="form-login">
+      <div class="form-header">
+        <img src="./assets/duck (1).png" alt="">
+        <p>PaToDo</p>
+      </div>
+      <h1>Login</h1>
+      <label>
+        Email:
+        <input id="inputEmail" type="email" name="email" pattern="^[a-z0-9.]+@[a-z0-9]+.[a-z]+(.[a-z]+)?$" required>
+      </label>
+      <label>
+        Senha:
+        <input id="inputPassword" type="password" name="password" required>
+      </label>
+
+      <button type="submit">Acessar</button>
+
+    </form>
+    <div class="ingressar">
+      <hr class='divider'>
+    
+    <ul class="social-icons">
+      <li><a href="link" target="_blank"><i class="fa fa-facebook"></i></a></li>  
+      <li><a href="link" target="_blank"><i class="fa fa-twitter"></i></a></li>  
+      <li><a href="link" target="_blank"><i class="fa fa-google"></i></a></li>  
+      <li><a href="link" target="_blank"><i class="fa fa-envelope"></i></a></li>  
+    </ul>
+    
+    <p>Não possui conta?</p>
+    <a href="./signup.html">Crie agora mesmo</a>
+
+ </div>
+
+  </div>
+  </div>
+
+</div>
+
+
+</body>
+
+</html>

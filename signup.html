@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do App</title>
+
+  <!-- ---------------- estilos compartilhados entre login e signup ---------------- -->
+  <link rel="stylesheet" href="styles/acesso.css">
+
+  <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+  <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v14.0&appId=1093824261558061&autoLogAppEvents=1" nonce="kAwKosC1"></script>
+
+  <div class="left">
+    <img src="./assets/pato.png" alt="">
+  </div>
+  <div class="right">
+    <form data-form-signup id="form-signup">
+      <div class="form-header">
+        <p>PaToDo</p>
+        <h5>Vamos Começar?</h5>
+      </div>
+
+      <label>
+        Nome:
+        <input id="firstName" type="text" name="firstName" required>
+        <span class="message"></span>
+      </label>
+      <label>
+        Sobrenome:
+        <input id="lastName" type="text" name="lastName" required>
+        <span class="message"></span>
+      </label>
+      <label>
+        Email:
+        <input id="email" type="email" name="email" required>
+        <span class="message"></span>
+      </label>
+      <label>
+        Senha:
+        <input data-password type="password" name="password" required>
+        <span class="message"></span>
+      </label>
+      <label>
+        Repetir senha:
+        <input data-password type="password" name="passwordConfirm" required>
+        <span class="message"></span>
+      </label>
+
+      <button type="submit" disabled >Criar conta</button>
+
+    </form>
+    <div class="ingressar">
+      
+      <hr class='divider2'>
+    
+      <ul class="social-icons">
+        <div class="fb-login-button" data-width="" data-size="medium" data-button-type="login_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="false"></div>
+        <li><a href="link" target="_blank"><i class="fa fa-facebook"></i></a></li>  
+        <li><a href="link" target="_blank"><i class="fa fa-twitter"></i></a></li>  
+        <li><a href="link" target="_blank"><i class="fa fa-google"></i></a></li>  
+        <li><a href="link" target="_blank"><i class="fa fa-envelope"></i></a></li>  
+      </ul>
+      
+      <p>Já possui conta?</p>
+      <a href="./index.html">Acesse aqui</a>
+
+    </div>
+  </div>
+  
+  <!-- ---------------------- lógica aplicada no registro -------------------- --> 
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '1093824261558061',
+        cookie     : true,
+        xfbml      : true,
+        version    : 'v0.1'
+      });
+        
+      FB.AppEvents.logPageView();   
+        
+    };
+
+    (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+  <script type="module" src="/scripts/utils.js"></script>
+  <script type="module" src="/scripts/signup.js"></script>
+</body>
+
+</html>
