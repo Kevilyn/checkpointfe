@@ -7,6 +7,7 @@ header {
   margin-bottom: 2em;
 }
 
+
 a {
   display: block;
   width: fit-content;
@@ -247,3 +248,8 @@ a {
 }
 
 
+.busca {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}

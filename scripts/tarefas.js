@@ -9,17 +9,6 @@ const listFinishedTasks = document.querySelector(".tarefas-terminadas")
 const listTasks = document.querySelector(".tarefas-pendentes")
 listTasks.innerHTML = ""
 
-/*const logoffButton = document.querySelector("#closeApp")
-logoffButton.addEventListener("click", logoff)
-
-const form = document.querySelector("form")
-form.addEventListener("submit",  handleSubmit)
-
-const valorInput = document.querySelector("#novaTarefa")
-const listFinishedTasks = document.querySelector(".tarefas-terminadas")
-const listTasks = document.querySelector(".tarefas-pendentes")
-listTasks.innerHTML = ""
-*/
 function handleSubmit(evento){
   evento.preventDefault()
   saveTask({description:valorInput.value, completed: false})
@@ -29,9 +18,6 @@ function saveTask(task){
   registerTask(task)
   console.log(task, "task")
 }
-
-
-
 
 function createTask(task){
     const li = document.createElement("li")
@@ -153,9 +139,6 @@ function filter() {
 }
 
 getTask()
-
-
-
 
 /*
 registerTask({
